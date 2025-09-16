@@ -5,6 +5,7 @@ function handleEditProfile() {
 
     var email = document.getElementById("email").textContent
     var inputEmail = document.getElementById('f-email')
+    
     inputEmail.value = email
 
     var interest = document.getElementById("interest").textContent
@@ -22,7 +23,13 @@ function handleDisplayProfile() {
 
     var updateEmail = document.getElementById("f-email").value
     var name = document.getElementById("email")
-    email.textContent = updateEmail
+    if (validator.isEmail(updateEmail)) {
+        email.textContent = updateEmail
+    } else {
+        alert("Invaid Email address")
+        
+    }
+    
 
     var updateInterest = document.getElementById("f-interest").value
     var name = document.getElementById("interest")
